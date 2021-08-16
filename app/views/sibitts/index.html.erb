@@ -1,27 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Sibitts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Sibitt</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sibitts.each do |sibitt| %>
-      <tr>
-        <td><%= sibitt.sibitt %></td>
-        <td><%= link_to 'Show', sibitt %></td>
-        <td><%= link_to 'Edit', edit_sibitt_path(sibitt) %></td>
-        <td><%= link_to 'Destroy', sibitt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sibitt', new_sibitt_path %>
+<section class ="section">
+  <div class="container">
+    <div class="columns">
+        <%= render 'trends'%>
+        <%= render 'feed'%>
+        <%= render 'who-to-follow'%>
+    </div>
+  </div>
+</section>
