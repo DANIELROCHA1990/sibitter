@@ -1,5 +1,6 @@
 class SibittsController < ApplicationController
   before_action :set_sibitt, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /sibitts or /sibitts.json
   def index
