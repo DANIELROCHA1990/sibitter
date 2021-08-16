@@ -1,0 +1,22 @@
+<%= form_with(model: sibitt) do |form| %>
+  <% if sibitt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sibitt.errors.count, "error") %> prohibited this sibitt from being saved:</h2>
+
+      <ul>
+        <% sibitt.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sibitt %>
+    <%= form.text_area :sibitt %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Sibitt < ApplicationRecord
+end
