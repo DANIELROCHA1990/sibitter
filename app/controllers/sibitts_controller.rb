@@ -13,7 +13,7 @@ class SibittsController < ApplicationController
 
   # GET /sibitts/new
   def new
-    @sibitt = Sibitt.new
+    @sibitt = current_user.sibitts.build
   end
 
   # GET /sibitts/1/edit
@@ -21,7 +21,7 @@ class SibittsController < ApplicationController
 
   # POST /sibitts or /sibitts.json
   def create
-    @sibitt = Sibitt.new(sibitt_params)
+    @sibitt = current_user.sibitts.build(sibitt_params)
 
     respond_to do |format|
       if @sibitt.save

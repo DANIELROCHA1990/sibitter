@@ -1,6 +1,21 @@
-<h1>Editing Sibitt</h1>
+<div class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<h1 class="title">Editing Sibitt</h1>
+				<%= render 'form', sibitt: @sibitt %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form', sibitt: @sibitt %>
-
-<%= link_to 'Show', @sibitt %> |
-<%= link_to 'Back', sibitts_path %>
+<nav class="navbar is-fixed-bottom">
+	<div class="navbar-menu">
+		<div class="navbar-item">
+			<div class="field is-grouped">
+				<p class="control">
+					<%= link_to 'Cancel', sibitts_path, class: "button is-dark" %>
+				</p>
+		</div>
+	</div>
+</nav>

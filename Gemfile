@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bulma-rails', '~> 0.9.1'
 # Forms made easy
 gem 'simple_form', '~> 5.1'
-gem 'gravatar_image_tag', '~> 1.2'
+gem 'gravatar_image_tag'
 gem 'devise', '~> 4.8'
 
 group :development, :test do
