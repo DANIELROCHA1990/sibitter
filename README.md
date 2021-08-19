@@ -1,24 +1,17 @@
-# README
+Ruby gems used in this build
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Better Errors - For better errors
 
-Things you may want to cover:
+Bulma - for easy CSS. Feel free to roll your own styles and/or use a different framework.
 
-* Ruby version
+Guard - Useful for live reloading our scss, js, css, and erb files, although it's capable of much more!
 
-* System dependencies
+Guard is required for the Guard LiveReload gem to work
 
-* Configuration
+Guard LiveReload
 
-* Database creation
+Simple Form - For simple forms!
 
-* Database initialization
+Devise - Effortless user roles and authentication
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Gravatar_image_tag - Integrated image tag which spits out gravatars.
