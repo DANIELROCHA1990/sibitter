@@ -1,31 +1,9 @@
-<div class="container">
-  <h2 class="title is-4">Sign In</h2>
-  <%= simple_form_for(@sibitt) do |f| %>
-    <%= f.error_notification %>
-    <div class="box">
-      <p>E-mail</p>
-      <div>
-        <input type="email" name="" id="" placeholder="Enter your Email...">
-      </div>
-    </div>
+dark theme 
 
-    <div class="box">
-      <p>Password</p>
-      <div>
-        <input type="password" name="" id="" placeholder="Enter your Password...">
-      </div>
-    </div>
-
-    <button class="button">
-      <%= f.button :submit, "Sign In", class:"button is-info is-medium"
-                    link_to 'Sign In',  new_user_session_path  %>
-    </button>
-  <% end %>
-  <p class="text">Don't have a account? <%= link_to ' Sign up', new_user_registration_path %></p>
-</div> 
-
-  <div class="container">
-    <div class="box">
-      <%= render %>
-    </div>
-  </div>
+<p>
+  <%#if cookies[:theme] == "light"%>
+    <%# link_to "go dark", root_path(theme: "dark"), class: "button is-info is-inverted"%>
+  <%#else%>
+    <%#link_to "go light", root_path(theme: "light")%>
+  <%#end%>
+</p>

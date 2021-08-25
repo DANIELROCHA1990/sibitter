@@ -1,59 +1,52 @@
 <!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <title>Sibitter</title>
+    <%= csrf_meta_tags %>
 
-<body class="<%=cookies[:theme]%>">
-  <%if cookies[:theme] == "light"%>
-    <%= link_to "go dark", root_path(theme: "dark")%>
-  <%else%>
-    <%=link_to "go light", root_path(theme: "light")%>
-  <%end%>
-  <html>
-    <head>
-      <title>Sibitter</title>
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <%= csrf_meta_tags %>
-      <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
-      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
-
-    <body>
-      <% if flash[:notice]%>
-        <div class="notification is-primary global-notification">
-          <p class="notice"><%= notice %></p>
+  <body>
+    <% if flash[:notice]%>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <%end%>
+    <% if flash[:alert]%>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <%end%>
+    <nav class="navbar is-info"> <%# Coloca a barra azul no script%>
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <h1 class="title is-5">Sibitter</h1>
+        <% end %>
+        <div class="navbar-burger burger" data-target="navbarExample">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      <%end%>
-      
-      <% if flash[:alert]%>
-        <div class="notification is-danger global-notification">
-          <p class="alert"><%= alert %></p>
-        </div>
-      <%end%>
-      
-      <%# Coloca a barra azul no script%>
-      <nav class="navbar is-info">
-        <div class="navbar-brand">
-          <%= link_to root_path, class:"navbar-item" do %>
-            <h1 class="title is-5">Sibitter</h1>
-          <% end %>
-          <div class="navbar-burger burger" data-target="navbarExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+      </div>
 
-        <div id="navbarExample" class="navbar-menu">
-          <div class="navbar-end">
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox">
+          <div class="slider round"></div>
+        </label>
+        <em>Switch Theme</em>
+      </div>
+
+      <div id="navbarExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="nav-bar item">
             <div class="field is-grouped">
-              <p class="control">
-                <%= link_to 'New Sibitt', new_sibitt_path, class: "button is-info is-inverted" %>
-              </p>
-
               <% if user_signed_in?%>
                 <p class="control">
-                  <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
+                  <%= link_to current_user.name, edit_user_registration_path, class: "button is-info is-inverted" %>
                 </p>
                 <p>
                   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-info"%>
@@ -67,12 +60,11 @@
                   <%= link_to 'Sign Up', new_user_registration_path,  class: "button is-info" %>
                 </p>
               <% end %>
-
             </div>
-          </div>
+          </div>  
         </div>
-      </nav> 
-      <%= yield %>
-    </body>
-  </html>
-</body>
+      </div>
+    </nav> 
+    <%= yield %>
+  </body>
+</html>

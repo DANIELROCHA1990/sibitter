@@ -7,9 +7,35 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "jquery-rails"
-import "jquery_ujs_extended"
+//= "jquery-rails"
+//= "jquery_ujs_extended"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+  }
+}
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    console.log('teste')
+  }
+  else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    console.log('teste')
+
+  }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
