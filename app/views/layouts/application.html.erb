@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light">
+<html>
   <head>
     <title>Sibitter</title>
     <%= csrf_meta_tags %>
@@ -37,7 +37,7 @@
           <input type="checkbox" id="checkbox">
           <div class="slider round"></div>
         </label>
-        <em>Switch Theme</em>
+        <em> Switch Mode</em>
       </div>
 
       <div id="navbarExample" class="navbar-menu">
@@ -53,9 +53,6 @@
                 </p>
                 </p>
               <% else %>
-                <p class="control">
-                  <%= link_to 'Sign In', new_user_session_path,  class: "button is-info" %>
-                </p>
                 <p class="control">
                   <%= link_to 'Sign Up', new_user_registration_path,  class: "button is-info" %>
                 </p>
